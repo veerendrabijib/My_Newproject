@@ -22,9 +22,9 @@ pipeline {
 
         stage('Start App') {
             steps {
-                dir('node') {
+               
                     bat 'npm run start'
-                }
+                
             }
         }
     }
