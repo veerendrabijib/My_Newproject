@@ -21,7 +21,6 @@ pipeline {
         }
 
         stage('Build') {
-            echo "compilinggggggggggggg"
             steps {
                 bat 'npm run start'
             }
