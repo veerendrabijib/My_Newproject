@@ -17,17 +17,18 @@ pipeline {
                 dir('angular/my-project17') {
                     bat 'npm install'
                 }
-            }          
+            }
         }
 
         stage('Start App') {
             steps {
-                dir('node') {
+                dir('angular/my-project17') {
                     bat 'npm run start'
                 }
             }
         }
     }
+
     post {
         success {
             echo "🎉 Deployment Successful!"
@@ -36,5 +37,4 @@ pipeline {
             echo "❌ Deployment Failed!"
         }
     }
-    
 }
