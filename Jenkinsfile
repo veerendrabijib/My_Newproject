@@ -34,12 +34,6 @@ pipeline {
                 bat 'npm run build'
             }
         }
-
-        stage('Start App (Optional)') {
-            steps {
-                bat 'npm start'
-            }
-        }
     }
 
     post {
