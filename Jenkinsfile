@@ -1,16 +1,11 @@
 pipeline {
     agent any
-
+    
     tools {
-        nodejs 'NodeJS'
-    }
-
-    environment {
-        NODE_ENV = 'production'
+        nodejs 'NodeJS_18'
     }
 
     stages {
-
         stage('Checkout') {
             steps {
                 git 'https://github.com/veerendrabijib/My_Newproject.git'
@@ -23,25 +18,16 @@ pipeline {
             }
         }
 
-        stage('Run Tests') {
-            steps {
-                bat 'npm test'
-            }
-        }
-
         stage('Build') {
             steps {
                 bat 'npm run build'
             }
         }
-    }
 
-    post {
-        success {
-            echo 'Node build completed successfully!'
-        }
-        failure {
-            echo 'Node build failed!'
+        stage('Test') {
+            steps {
+                bat 'npm test'
+            }
         }
     }
 }
