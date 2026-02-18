@@ -14,7 +14,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                dir('node') {
+                dir('angular/my-project17') {
                     bat 'npm install'
                 }
             }          
@@ -27,4 +27,5 @@ pipeline {
         }
        
     }
+    
 }
