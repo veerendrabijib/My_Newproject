@@ -22,9 +22,9 @@ pipeline {
 
         stage('Start App') {
             steps {
-               
+                dir('angular/my-project17') {
                     bat 'npm run start'
-                
+                }
             }
         }
     }
