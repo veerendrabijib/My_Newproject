@@ -1,7 +1,8 @@
 pipeline {
     agent any
 
-    tools {
+    tools { 
+        echo "68eik,ry7iie7iy36iik6tmi8etyik,y"
         nodejs 'NodeJS'   // Name configured in Jenkins Global Tool Configuration
     }
 
