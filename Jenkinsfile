@@ -14,8 +14,10 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'
-            }
+                dir('node') {
+                    bat 'npm install'
+                }
+            }          
         }
 
         stage('Build') {
