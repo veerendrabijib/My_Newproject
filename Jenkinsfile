@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/veerendrabijib/My_Newproject.git'
+                git branch: 'master', url: 'https://github.com/veerendrabijib/My_Newproject.git'
             }
         }
 
@@ -20,12 +20,21 @@ pipeline {
             }          
         }
 
-        stage('Build') {
+        stage('Start App') {
             steps {
-                bat 'npm run start'
+                dir('node') {
+                    bat 'npm run start'
+                }
             }
         }
-       
+    }
+    post {
+        success {
+            echo "🎉 Deployment Successful!"
+        }
+        failure {
+            echo "❌ Deployment Failed!"
+        }
     }
     
 }
